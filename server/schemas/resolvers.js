@@ -1,4 +1,4 @@
-const { Books, User } = require('../models');
+const { Books, User } = require("../models");
 
 const resolvers = {
   Query: {
@@ -6,9 +6,9 @@ const resolvers = {
       return await Books.find({});
     },
     users: async () => {
-        return await User.find({}).populate('books');
-      },
-  }
+      return await User.find({});
+    },
+  },
 };
 
 module.exports = resolvers;
