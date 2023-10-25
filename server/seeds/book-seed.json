@@ -1,0 +1,26 @@
+[
+    {
+        "authors": "J K. ROFLING",
+        "description": "\"Fantastic Beasts and Where to Find Them: Coloring Book\" is parody of \"Fantastic Beasts and Where to Find Them: Magical Creatures Coloring Book.\" Harry Potter fans are loving coloring this book",
+        "bookId": "xNgstAEACAAJ",
+        "image": "http://books.google.com/books/content?id=xNgstAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+        "link": "https://www.googleapis.com/books/v1/volumes/xNgstAEACAAJ",
+        "title": "Fantastic Beasts and Where to Find Them"
+    },
+    {
+        "authors": "John Jackson Miller",
+        "description": "A long time ago in a galaxy far, far away. . . . ",
+        "bookId": "tSfTCwAAQBAJ",
+        "image": "http://books.google.com/books/content?id=tSfTCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "link": "https://www.googleapis.com/books/v1/volumes/tSfTCwAAQBAJ",
+        "title": "A New Dawn: Star Wars"
+    },
+    {
+        "authors": "Rebecca Giblin",
+        "description": "A call to action for the creative class and labor movement to rally against the power of Big Tech and Big Media Corporate concentration has breached the stratosphere, as have corporate profits. ",
+        "bookId": "CzuAEAAAQBAJ",
+        "image": "http://books.google.com/books/content?id=CzuAEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "link": "https://www.googleapis.com/books/v1/volumes/CzuAEAAAQBAJ",
+        "title": "Chokepoint Capitalism"
+    }
+]
