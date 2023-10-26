@@ -15,8 +15,8 @@ db.once("open", async () => {
 
   for (newBook of bookData) {
     const user = users[Math.floor(Math.random() * users.length)]; // Get the user
-    console.log(user);
-    console.log(newBook);
+    // console.log(user);
+    // console.log(newBook);
 
     user.savedBooks.push(newBook);
 
