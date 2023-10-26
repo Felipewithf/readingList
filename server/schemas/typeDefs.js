@@ -18,11 +18,8 @@ const typeDefs = `
   }
 
   type Query {
-    books: [Book]
-    savedBooks: [Book]
     users: [User]
     user(id: ID!): User
-    book(id: ID!): Book
   }
 `;
 
