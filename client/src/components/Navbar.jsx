@@ -26,6 +26,9 @@ const AppNavbar = () => {
               {/* if user is logged in show saved books and logout */}
               {Auth.loggedIn() ? (
                 <>
+                  <Nav.Link as={Link} to='/savedgql'>
+                    See Your Books GQL
+                  </Nav.Link>
                   <Nav.Link as={Link} to='/saved'>
                     See Your Books
                   </Nav.Link>
