@@ -2,11 +2,11 @@
   {
     "username": "koko",
     "email": "koko@koko.com",
-    "password": "12345678"
+    "password": "$2b$10$6bTSNstjRAyD3pJ5hW.puOIpbkPepF5lw6quY.McHiGYCHXK/9nn6"
   },
   {
     "username": "lily",
     "email": "lilibet@lilibet.com",
-    "password": "12345678"
+    "password": "$2b$10$6bTSNstjRAyD3pJ5hW.puOIpbkPepF5lw6quY.McHiGYCHXK/9nn6"
   }
 ]
