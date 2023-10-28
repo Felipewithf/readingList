@@ -20,11 +20,12 @@ const SavedBooks = () => {
   const [ removeSavedBook, {error_removed_book, data_removed_book} ] = useMutation(REMOVE_BOOK);
 
   useEffect(() => {
+    
     if (!loading && !error && data && data.me) {
       // Set the userData state with the data from the query  
       setUserData(data.me);
     }
-  }, [loading, error, data]);
+  },[loading]);
 
   if (loading) {
     return <div>Loading...</div>;

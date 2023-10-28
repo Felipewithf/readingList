@@ -13,7 +13,7 @@ import Auth from '../utils/auth';
 import { ADD_BOOK } from '../utils/mutations';
 import { searchGoogleBooks } from '../utils/API';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
-import { flattenArrayIfExists } from '../utils/helpers';
+import { flattenArrayIfExists, truncateText } from '../utils/helpers';
 
 const SearchBooks = () => {
   // create state for holding returned google api data
@@ -53,7 +53,7 @@ const SearchBooks = () => {
         bookId: book.id,
         authors: flattenArrayIfExists(book.volumeInfo.authors) || 'No author to display',
         title: book.volumeInfo.title,
-        description: book.volumeInfo.description || 'missing description..',
+        description: truncateText(book.volumeInfo.description) || 'missing description..',
         image: book.volumeInfo.imageLinks?.thumbnail || '',
       }));
 

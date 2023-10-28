@@ -7,3 +7,10 @@ export const flattenArrayIfExists = (authors) => {
   }
   return flattenedString;
 };
+
+export const truncateText = (text) => {
+  if (typeof text === 'string' && text.length > 250) {
+    return text.slice(0, 247) + "...";
+  }
+  return text;
+};
