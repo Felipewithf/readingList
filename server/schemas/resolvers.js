@@ -35,6 +35,24 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+    removeBook: async (parent, { bookId }, context) => {
+      if (context.user) {
+        return User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { savedBooks: { bookId: bookId } } },
+          { new: true }
+        );
+      }
+      throw AuthenticationError;
+    },
+    // --working without context
+    // removeBook: async (parent, { username, bookId }) => {
+    //     return User.findOneAndUpdate(
+    //       { username },
+    //       { $pull: { savedBooks: { bookId: bookId } } },
+    //       { new: true }
+    //     );
+    //   },
   },
 };
 

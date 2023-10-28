@@ -1,27 +1,28 @@
 import { useState, useEffect } from 'react';
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import {
   Container,
   Card,
   Button,
   Row,
-  Col
+  Col,
 } from 'react-bootstrap';
 
 import { QUERY_ME } from '../utils/queries';
+import { REMOVE_BOOK } from '../utils/mutations';
 import Auth from '../utils/auth';
+import { removeBookId } from '../utils/localStorage';
 
 const SavedBooks = () => {
   const [userData, setUserData] = useState({});
   const userDataLength = Object.keys(userData).length;
   const { loading, error, data } = useQuery(QUERY_ME);
+  const [ removeSavedBook, {error_removed_book, data_removed_book} ] = useMutation(REMOVE_BOOK);
 
   useEffect(() => {
     if (!loading && !error && data && data.me) {
-      // Set the userData state with the data from the query
-  
+      // Set the userData state with the data from the query  
       setUserData(data.me);
-    
     }
   }, [loading, error, data]);
 
@@ -42,14 +43,11 @@ const SavedBooks = () => {
     }
 
     try {
-      const response = await deleteBook(bookId, token);
+      await removeSavedBook({
+        variables:{bookId}
+      });
 
-      if (!response.ok) {
-        throw new Error('something went wrong!');
-      }
-
-      const updatedUser = await response.json();
-      setUserData(updatedUser);
+      window.location.reload();
       // upon success, remove book's id from localStorage
       removeBookId(bookId);
     } catch (err) {
@@ -64,7 +62,7 @@ const SavedBooks = () => {
 
   return (
     <>
-      <div fluid className="text-light bg-dark p-5">
+      <div fluid="true" className="text-light bg-dark p-5">
         <Container>
           <h1>Viewing saved books!</h1>
         </Container>
