@@ -45,6 +45,16 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
+    addBook: async (parent, { bookId, title, description, authors, image, link }, context) => {
+        if (context.user) {  
+        return User.findOneAndUpdate(
+            { _id: context.user._id },
+            { $addToSet: { savedBooks: { bookId, title, description,authors, image, link } } },
+            { new: true }
+          );
+        }
+        throw AuthenticationError;
+      },
     // --working without context
     // removeBook: async (parent, { username, bookId }) => {
     //     return User.findOneAndUpdate(
@@ -53,6 +63,13 @@ const resolvers = {
     //       { new: true }
     //     );
     //   },
+    // addBook: async (parent, { username, bookId, title, description,authors, image, link }) => {
+    //     return User.findOneAndUpdate(
+    //       { username },
+    //       { $addToSet: { savedBooks: { bookId, title, description,authors, image, link } } },
+    //       { new: true }
+    //     );
+    // },
   },
 };
 
